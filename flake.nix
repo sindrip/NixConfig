@@ -1,11 +1,24 @@
 {
   description = "A very basic flake";
 
-  outputs = { self, nixpkgs }: {
+  inputs = {
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  };
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+  outputs = { self, nixpkgs, ... }@inputs:
+    let
+      unstable-pkgs = nixpkgs.legacyPackages.x86_64-linux;
+    in
+  {
 
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+    packages.x86_64-linux.myPackages = unstable-pkgs.buildEnv {
+      name = "myPackages";
+      paths = [
+        unstable-pkgs.rust-analyzer
+      ];
+    };
+
+    defaultPackage.x86_64-linux = self.packages.x86_64-linux.myPackages;
 
   };
 }
