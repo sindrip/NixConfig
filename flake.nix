@@ -14,7 +14,6 @@
     packages.x86_64-linux.myPackages = unstable-pkgs.buildEnv {
       name = "myPackages";
       paths = [
-        unstable-pkgs.direnv
         unstable-pkgs.rust-analyzer
       ];
     };
