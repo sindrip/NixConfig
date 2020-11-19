@@ -2,23 +2,33 @@
   description = "A very basic flake";
 
   inputs = {
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:rycee/home-manager/master";
+      inputs.nixpkgs.follows = "/nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
-    let
-      unstable-pkgs = nixpkgs.legacyPackages.x86_64-linux;
-    in
-  {
+  outputs = { self, ... }@inputs: {
 
-    packages.x86_64-linux.myPackages = unstable-pkgs.buildEnv {
-      name = "myPackages";
-      paths = [
-        unstable-pkgs.rust-analyzer
-      ];
-    };
+      homeManagerConfigurations = {
+        me = inputs.home-manager.lib.homeManagerConfiguration {
+          configuration = ./home.nix;
+          system = "x86_64-linux";
+          homeDirectory = "/home/sindrip";
+          username = "sindrip";
+        };
+      };
 
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.myPackages;
+    #packages.x86_64-linux.myPackages = unstable-pkgs.buildEnv {
+    #  name = "myPackages";
+    #  paths = [
+    #    unstable-pkgs.rust-analyzer
+    #  ];
+    #};
+
+    #defaultPackage.x86_64-linux = self.packages.x86_64-linux.myPackages;
 
   };
 }
