@@ -1,0 +1,15 @@
+set ideajoin
+
+set relativenumber number
+set ignorecase
+
+set scrolloff=3 sidescrolloff=5
+
+set clipboard=unnamedplus,unnamed
+
+let mapleader = " "
+
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
