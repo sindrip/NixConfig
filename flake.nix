@@ -12,23 +12,16 @@
 
   outputs = { self, ... }@inputs: {
 
-      homeManagerConfigurations = {
-        me = inputs.home-manager.lib.homeManagerConfiguration {
-          configuration = ./home.nix;
-          system = "x86_64-linux";
-          homeDirectory = "/home/sindrip";
-          username = "sindrip";
-        };
+    homeManagerConfigurations = {
+      me = inputs.home-manager.lib.homeManagerConfiguration {
+        configuration = ./home;
+        system = "x86_64-linux";
+        homeDirectory = "/home/sindrip";
+        username = "sindrip";
       };
+    };
 
-    #packages.x86_64-linux.myPackages = unstable-pkgs.buildEnv {
-    #  name = "myPackages";
-    #  paths = [
-    #    unstable-pkgs.rust-analyzer
-    #  ];
-    #};
-
-    #defaultPackage.x86_64-linux = self.packages.x86_64-linux.myPackages;
+    defaultPackage.x86_64-linux = self.homeManagerConfigurations.me.activationPackage;
 
   };
 }
