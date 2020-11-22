@@ -1,2 +1,0 @@
-#! /usr/bin/env sh
-nix build .#homeManagerConfigurations.me.activationPackage && ./result/activate

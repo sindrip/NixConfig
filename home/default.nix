@@ -15,6 +15,7 @@
   #xdg.enable = true;
   xdg.configFile = {
     "ideavim/ideavimrc".source = ./dotconfig/ideavim/ideavimrc;
+    "nix/nix.conf".source = ./dotconfig/nix/nix.conf;
   };
 
 }

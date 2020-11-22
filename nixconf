@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case $1 in
+    build | b )         nix build
+                        ;;
+    update | u )        nix flake update --recreate-lock-file
+                        ;;
+    install | i)        nix build && ./result/activate
+                        ;;
+    * )                 echo "Unrecognized command $1"
+                        ;;
+esac

@@ -1,8 +1,22 @@
 # NixConfig
 
-https://nixos.wiki/wiki/Flakes
+```
+# ~/.config/nix/nix.conf
 
-> ~/.config/nix/nix.conf
+experimental-features = nix-command flakes ca-references
+```
 
-> experimental-features = nix-command flakes ca-references
+# Installation
+Install nix [https://nixos.org/download.html]
+
+```
+# Create a shell with all the required dependencies
+nix-shell -p git nixFlake
+
+# Clone this repository
+git clone https://github.com/sindrip/NixConfig
+
+# Build and install
+./nixconf install
+```
 
