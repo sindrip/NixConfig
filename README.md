@@ -7,11 +7,11 @@ experimental-features = nix-command flakes ca-references
 ```
 
 # Installation
-Install nix [https://nixos.org/download.html]
+Install nix https://nixos.org/download.html
 
 ```
 # Create a shell with all the required dependencies
-nix-shell -p git nixFlake
+nix-shell -p git nixFlakes
 
 # Clone this repository
 git clone https://github.com/sindrip/NixConfig

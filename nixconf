@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 case $1 in
-    build | b )         nix build
+    build | b )         nix-shell -p nixFlakes --run "nix build --experimental-features 'nix-command flakes'"
                         ;;
-    update | u )        nix flake update --recreate-lock-file
+    update | u )        nix-shell -p nixFlakes --run "nix flake update --recreate-lock-file --experimental-features 'nix-command flakes'"
                         ;;
-    install | i)        nix build && ./result/activate
+    install | i)        nix-shell -p nixFlakes --run "nix build --experimental-features 'nix-command flakes' && ./result/activate"
                         ;;
     * )                 echo "Unrecognized command $1"
                         ;;
