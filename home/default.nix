@@ -1,6 +1,10 @@
 {config, pkgs, ...}:
 
 {
+  imports = [
+    ./alacritty.nix
+  ];
+
   home.stateVersion = "20.09";
 
   home.packages = [
@@ -15,6 +19,7 @@
     pkgs.fzf
     pkgs.bat
     pkgs.gitAndTools.delta
+    pkgs.neovim-nightly
 
     # LSP
     pkgs.rust-analyzer
@@ -29,7 +34,6 @@
 
   xdg.configFile = {
     "ideavim/ideavimrc".source = ./dotconfig/ideavim/ideavimrc;
-    "nix/nix.conf".source = ./dotconfig/nix/nix.conf;
   };
 
 }
