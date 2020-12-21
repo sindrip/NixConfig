@@ -1,12 +1,27 @@
 #!/usr/bin/env bash
 
-case $1 in
+cmd=$1
+aux=$2
+
+function update_inputs() {
+    case $1 in
+        all | a )       nix-shell -p nixFlakes --run "nix flake update --recreate-lock-file --experimental-features 'nix-command flakes'"
+                        ;;
+        nvim )          nix-shell -p nixFlakes --run "nix flake update --update-input neovim-nightly-overlay --experimental-features 'nix-command flakes'"
+                        ;;
+        * )             echo "Missing second argument $1"
+                        ;;
+    esac
+}
+
+case $cmd in
     build | b )         nix-shell -p nixFlakes --run "nix build --experimental-features 'nix-command flakes'"
                         ;;
-    update | u )        nix-shell -p nixFlakes --run "nix flake update --recreate-lock-file --experimental-features 'nix-command flakes'"
+    update | u )        update_inputs $aux
                         ;;
     install | i)        nix-shell -p nixFlakes --run "nix build --experimental-features 'nix-command flakes' && ./result/activate"
                         ;;
     * )                 echo "Unrecognized command $1"
                         ;;
 esac
+
