@@ -20,9 +20,9 @@
     pkgs.bat
     pkgs.gitAndTools.delta
     pkgs.neovim-nightly
+    pkgs.tree
 
     # LSP
-    pkgs.rust-analyzer
     pkgs.texlab
 
     #Other
