@@ -6,7 +6,9 @@ polybar
 dmenu
 xss-lock
 xsecurelock
+brightnessctl
 papirus-icon-theme
 network-manager
 network-manager-gnome
+pasystray
 texlive-full
