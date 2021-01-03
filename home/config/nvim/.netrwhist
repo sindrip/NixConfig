@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/sindrip/.config/gtk-3.0'
+let g:netrw_dirhist_6='/home/sindrip/.config/bspwm'
+let g:netrw_dirhist_5='/home/sindrip/Code/NixConfig/debian'
+let g:netrw_dirhist_4='/home/sindrip/Code/NixConfig'
+let g:netrw_dirhist_3='/home/sindrip/.config/gtk-3.0'
+let g:netrw_dirhist_2='/home/sindrip/.config/sxhkd'
+let g:netrw_dirhist_1='/home/sindrip/Code/NixConfig/home'
+let g:netrw_dirhist_0='/home/sindrip/Code/NixConfig'
+let g:netrw_dirhist_9='/home/sindrip/.config/nvim/lua'
+let g:netrw_dirhist_8='/home/sindrip/Code/shedit/src'

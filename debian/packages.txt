@@ -1,0 +1,12 @@
+fwupd
+intel-microcode
+fish
+bspwm
+polybar
+dmenu
+xss-lock
+xsecurelock
+papirus-icon-theme
+network-manager
+network-manager-gnome
+texlive-full

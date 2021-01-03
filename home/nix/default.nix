@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ...}:
 
 {
   imports = [
@@ -33,7 +33,6 @@
   programs.tmux.enable = true;
 
   xdg.configFile = {
-    "ideavim/ideavimrc".source = ./dotconfig/ideavim/ideavimrc;
   };
 
 }

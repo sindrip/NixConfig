@@ -1,0 +1,14 @@
+[user]
+    email = sindripetur@gmail.com
+    name = Sindri Pétur Ingimundarson
+
+[core]
+    pager = delta
+
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = gruvbox
+
+[interactive]
+    diffFilter = delta --color-only
