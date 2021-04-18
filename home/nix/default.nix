@@ -15,8 +15,9 @@
     pkgs.git
     pkgs.starship
     pkgs.tmux
-    pkgs.direnv
+    #pkgs.direnv
     pkgs.fzf
+    pkgs.ripgrep
     pkgs.bat
     pkgs.fd
     pkgs.gitAndTools.delta
@@ -24,6 +25,9 @@
     pkgs.neovim-remote
     pkgs.tree
     (pkgs.nerdfonts.override {fonts = [ "Iosevka" ]; })
+
+    # Coq
+    pkgs.coq
 
     # Java
     pkgs.jdk
@@ -33,7 +37,7 @@
     pkgs.texlab
     pkgs.sumneko-lua-language-server
 
-    #Other
+    # Other
     pkgs.zathura
   ];
 
