@@ -21,7 +21,7 @@
             inputs.neovim-nightly-overlay.overlay
           ];
           imports = [
-            ./home/nix
+            ./nix
           ];
         };
         #configuration = ./home;
